@@ -1,4 +1,5 @@
-public abstract class Libro {
+public abstract class Libro implements Cloneable{
+    //Attributi
     private String titolo; 
     private String isbn;
     private int anno;
@@ -6,6 +7,7 @@ public abstract class Libro {
     private Autore autore;
     private double prezzoDiVendita;
 
+    //Costruttore con parametri
     public Libro(String titolo, String isbn, int anno, String cd, Autore a, double price){
         this.titolo = titolo;
         this.isbn = isbn;
@@ -64,10 +66,18 @@ public abstract class Libro {
         this.prezzoDiVendita = prezzoDiVendita;
     }
 
+    //Stampa info
     @Override
     public String toString() {
         return "\n Titolo:" + this.titolo + "\n Isbn:" + this.isbn + "\n Autore: "+ this.autore.toString();
     }
 
+    public Libro clone() {
+        try {
+            return (Libro) super.clone();
+        } catch (Exception e) {
+            throw new InternalError();
+        }
+    }
         
 }

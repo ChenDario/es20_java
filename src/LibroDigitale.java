@@ -1,7 +1,8 @@
 public class LibroDigitale extends Libro{
+    //Attributi
     private double dimensione;
     private String estensioneFile; 
-
+    //Costruttore con parametri
     public LibroDigitale(double dimensione, String estensioneFile, String titolo, String isbn, int anno, String casaEditrice, Autore autore, double prezzoDiVendita) {
         super(titolo, isbn, anno, casaEditrice, autore, prezzoDiVendita);
         this.dimensione = dimensione;

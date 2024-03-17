@@ -1,4 +1,5 @@
 public class Autore {
+    //Attributi
     private String nome;
     private String cognome;
     private String codiceFiscale;
@@ -29,6 +30,7 @@ public class Autore {
         this.codiceFiscale = codiceFiscale;
     }
 
+    //Metodo get info autore
     @Override
     public String toString() {
         return this.nome + " " + this.cognome;

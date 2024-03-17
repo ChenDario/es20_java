@@ -1,8 +1,9 @@
 public class LibroCartaceo extends Libro{
+    //Attributi
     private double peso; 
     private boolean copertinaRigida; 
     private int qtaInMagazzino; 
-
+    //Costruttore con parametri
     public LibroCartaceo(double peso, boolean copertinaRigida, int qtaInMagazzino, String titolo, String isbn, int anno, String casaEditrice, Autore autore, double prezzoDiVendita) {
         super(titolo, isbn, anno, casaEditrice, autore, prezzoDiVendita);
         this.peso = peso;
@@ -10,6 +11,7 @@ public class LibroCartaceo extends Libro{
         this.qtaInMagazzino = qtaInMagazzino;
     }
 
+    //Metodi get e set
     public double getPeso() {
         return peso;
     }

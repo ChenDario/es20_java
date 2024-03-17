@@ -1,18 +1,32 @@
 public class Lista {
+    //Attributi
     private Nodo head;
 
+    //Costruttore vuoto
     public Lista(){
         head = null;
     }
 
+    //Costruttore con parametri
     public Lista(Nodo a){
         head = a;
     }
 
+    //Costruttore con parametri
     public Lista(Libro c){
         head = new Nodo(c);
     }
 
+    //Metodi get e set
+    public Nodo getHead() {
+        return head;
+    }
+
+    public void setHead(Nodo head) {
+        this.head = head;
+    }
+
+    //Metodo per controllare se il Libro è gia presente nella lista
     public Nodo isPresente(Libro i){
         //Scorro la lista finché non arriva in fondo
         for(Nodo tmp = head; tmp != null; tmp = tmp.getNext()){
@@ -25,7 +39,8 @@ public class Lista {
         return null;
     }
 
-    public void addLista(Libro i){
+    //Metodo per add
+    public boolean addLista(Libro i){
         Nodo nuovo = new Nodo(i);
 
         if(head == null){
@@ -52,17 +67,22 @@ public class Lista {
                 } else {
                     precedente.setNext(nuovo);
                 }
+                return true;
             } else {
                 //Se è un libro cartaceo
                 if(presente.getInfo() instanceof LibroCartaceo){
                     //Aumento la quantità in magazzino 
                     ((LibroCartaceo)presente.getInfo()).setQtaInMagazzino(((LibroCartaceo)presente.getInfo()).getQtaInMagazzino() + 1);
+                    return true;
                 }
                 //Se il libro è digitale
+                return false;
             }
         }   
+        return false;
     }
 
+    //Metodo per trovare l'ultimo nodo della lista
     public Nodo trovaUltimo(){
         if(head == null){
             return null;
@@ -73,6 +93,7 @@ public class Lista {
         }
     }
 
+    //Metodo get info
     public String getInfoLista(){
         String info = " ";
 
